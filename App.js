@@ -16,26 +16,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
-// const GopayFeature = (props) => {
-//   return (
-//     <View style={{flex: 1, alignItems: 'center'}}>
-//       <Image source={props.img}/>
-//       <Text style={{fontSize: 13, fontWeight: 'bold', color: 'white', marginTop: 15}}>{props.title}</Text>
-//     </View>
-//   )
-// }
-
-class GopayFeature extends Component {
-  render() {
-    return (
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <Image source={this.props.img}/>
-        <Text style={{fontSize: 13, fontWeight: 'bold', color: 'white', marginTop: 15}}>{this.props.title}</Text>
-      </View>
-    )
-  }
-}
+import GopayFeature from './src/component/molecules/GopayFeature';
+import MainFeature from './src/component/molecules/MainFeature';
 
 export default class App extends Component {
   render() {
@@ -67,57 +49,15 @@ export default class App extends Component {
           </View>
           {/* main feature */}
           <View style={{flexDirection: 'row', flexWrap: 'wrap', marginTop: 18}}>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '100%', marginBottom: 18}}>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-ride.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-RIDE</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-car.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-CAR</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-bluebird.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-BLUEBIRD</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-send.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-SEND</Text>
-              </View>
-            </View>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '100%', marginBottom: 18}}>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-deals.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-DEALS</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-pulsa.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-PULSA</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-food.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>GO-FOOD</Text>
-              </View>
-              <View style={{width: '25%', alignItems: 'center'}}>
-                <View style={{width: 58, height: 58, borderWidth: 1, borderColor: '#efefef', borderRadius: 20, justifyContent: 'center', alignItems: 'center'}}>
-                  <Image source={require('./src/assets/icon/go-more.png')}/>
-                </View>
-                <Text style={{fontSize: 11, fontWeight: 'bold', textAlign: 'center', marginTop: 6}}>MORE</Text>
-              </View>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '100%', flexWrap: 'wrap'}}>
+              <MainFeature img={require('./src/assets/icon/go-ride.png')} title='GO-RIDE'/>
+              <MainFeature img={require('./src/assets/icon/go-car.png')} title='GO-CAR'/>
+              <MainFeature img={require('./src/assets/icon/go-bluebird.png')} title='GO-BLUEBIRD'/>
+              <MainFeature img={require('./src/assets/icon/go-send.png')} title='GO-SEND'/>            
+              <MainFeature img={require('./src/assets/icon/go-deals.png')} title='GO-DEALS'/>
+              <MainFeature img={require('./src/assets/icon/go-pulsa.png')} title='GO-PULSA'/>
+              <MainFeature img={require('./src/assets/icon/go-food.png')} title='GO-FOOD'/>
+              <MainFeature img={require('./src/assets/icon/go-more.png')} title='MORE'/>              
             </View>            
           </View>
           <View style={{height: 17, backgroundColor: '#f2f2f4', marginTop: 10}}></View>
