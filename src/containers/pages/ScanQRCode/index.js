@@ -19,6 +19,9 @@ const IconAction = () => {
 }
 
 class ScanQRCode extends React.Component {
+    state = {
+        barcode : ''
+    }
     render() {
         return (
             <View style={{flex: 1}}>
@@ -46,8 +49,11 @@ class ScanQRCode extends React.Component {
                             buttonPositive: 'Ok',
                             buttonNegative: 'Cancel',
                         }}
-                        onGoogleVisionBarcodesDetected={({ barcodes }) => {
-                            console.log(barcodes);
+                        onBarCodeRead={(barcode) => {
+                            console.log(barcode);
+                            this.setState({
+                                barcode: barcode.data,
+                            })
                         }}
                         />
                     <View style={{flexDirection: 'row', paddingHorizontal: 16, marginTop: 16, justifyContent: 'space-between', top: 0, left: 0, position: 'absolute', width: '100%'}}>                        
@@ -74,7 +80,8 @@ class ScanQRCode extends React.Component {
                         </View>
                         <View style={{width: 1, height: 60, backgroundColor: 'grey'}}></View>
                         <View style={{flex: 1, paddingLeft: 12}}>
-                            <Text>Your recent GoPay receivers will show here. No admin fees!</Text>
+                            {/* <Text>Your recent GoPay receivers will show here. No admin fees!</Text> */}
+                            <Text>{this.state.barcode}</Text>
                         </View>
                     </View>
                 </View>
